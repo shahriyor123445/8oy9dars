@@ -18,16 +18,29 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 4px solid dodgerblue;
+  border-top-color: transparent;
+  border-radius: 50%;
+  
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes spin{
+  to {
+    transform: rotateZ(360deg);
   }
 }
